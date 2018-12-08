@@ -66,6 +66,7 @@ services:
 
   logstash:
     image: logstash:6.5.2
+    container_name: logstash
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
@@ -81,6 +82,7 @@ services:
 
   logspout:
     image: gliderlabs/logspout:latest
+    container_name: logspout
     volumes:
       - /etc/hostname:/etc/host_hostname:ro
       - /var/run/docker.sock:/var/run/docker.sock
