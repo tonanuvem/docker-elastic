@@ -81,16 +81,14 @@ services:
 
   logspout:
     image: gliderlabs/logspout:latest
-    networks:
-      - logging
     volumes:
       - /etc/hostname:/etc/host_hostname:ro
       - /var/run/docker.sock:/var/run/docker.sock
     command:
-      syslog://svt2-logger.am2.cloudra.local:514
-    environment:
-      - "ROUTE_URIS=logstash://logstash:5000"
-      - "LOGSTASH_TAGS: docker-elastic"
+      syslog://logstash:5000
+#    environment:
+#      - "ROUTE_URIS=logstash://logstash:5000"
+#      - "LOGSTASH_TAGS: docker-elastic"
     networks:
       - elk
     depends_on:
