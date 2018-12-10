@@ -7,7 +7,7 @@ services:
       - "http.host=0.0.0.0"
       - "transport.host=127.0.0.1"
       - "ES_JAVA_OPTS=-Xmx256m -Xms256m"
-      - "ELASTIC_PASSWORD=senha"
+      - "ELASTIC_PASSWORD=changeme"
     volumes:
       - esdata:/usr/share/elasticsearch/data
     networks:
