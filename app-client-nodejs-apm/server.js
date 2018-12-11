@@ -13,8 +13,10 @@ var apm = require('elastic-apm-node').start({
 
 var app = require("express")();
 var fs = require('fs');
+var path = require('path');
 
-app.use('/ati_arquivos', express.static('ati_arquivos'));
+//app.use('/ati_arquivos', express.static('ati_arquivos'));
+app.use("/ati_arquivos", express.static(path.resolve(__dirname, 'ati_arquivos')));
 
 app.get("/", function(req, res) {
   fs.readFile('index.html', function(err, data) {
