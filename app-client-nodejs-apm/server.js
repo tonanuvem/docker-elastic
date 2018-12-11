@@ -4,7 +4,7 @@ var apm = require('elastic-apm-node').start({
   frameworkName: 'express',
   frameworkVersion: 'unknown',
   serviceName: 'aplicacao-25ati-nodejs',
-  serverUrl: 'apm-server-8200',
+  serverUrl: 'apm-server:8200',
   flushInterval: 1,
   maxQueueSize: 1,
   apiRequestTime: "50ms",
