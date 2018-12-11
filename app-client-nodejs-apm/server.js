@@ -25,19 +25,23 @@ app.get("/healthcheck", function(req, res) {
     res.send("OK");
 });
 
-app.get("/foo", function(req, res) {
-    foo_route()
-    res.send("foo");
+app.get("/ati", function(req, res) {
+  ati_route()
+  fs.readFile('25ati.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    res.end();
+  });
 });
 
-function foo_route () {
-    var span = apm.startSpan('app.foo', 'custom')
+function ati_route () {
+    var span = apm.startSpan('app.ati', 'custom')
     span.end()
 }
 
 app.get("/bar", function(req, res) {
     bar_route()
-    res.send("bar");
+    res.send("Quando será nosso happy hour? <br><br> Vamos para o bar?");
 });
 
 function bar_route () {
