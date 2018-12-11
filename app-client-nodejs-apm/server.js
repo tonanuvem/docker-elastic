@@ -27,7 +27,7 @@ app.get("/healthcheck", function(req, res) {
 
 app.get("/ati", function(req, res) {
   ati_route()
-  fs.readFile('25ati.html', function(err, data) {
+  fs.readFile('ati.htm', function(err, data) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(data);
     res.end();
