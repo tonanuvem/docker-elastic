@@ -14,7 +14,11 @@ var apm = require('elastic-apm-node').start({
 var app = require("express")();
 
 app.get("/", function(req, res) {
-    res.send("OK");
+  fs.readFile('index.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    res.end();
+  });
 });
 
 app.get("/healthcheck", function(req, res) {
