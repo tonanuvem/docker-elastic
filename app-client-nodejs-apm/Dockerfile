@@ -7,6 +7,6 @@ RUN mkdir -p /app
 RUN npm install express
 RUN npm install elastic-apm-node
 
-COPY . .
+COPY ./* ./*
 EXPOSE 3000
 CMD [ "npm", "start" ]
