@@ -27,8 +27,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/healthcheck", function(req, res) {
-    res.send("OK");
-    res.send(path.resolve(__dirname, 'ati_arquivos'));
+    res.send("OK" + path.resolve(__dirname, 'ati_arquivos'));
 });
 
 app.get("/ati", function(req, res) {
