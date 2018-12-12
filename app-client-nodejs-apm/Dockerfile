@@ -6,7 +6,6 @@ COPY package*.json ./
 RUN mkdir -p /app
 RUN npm install express
 RUN npm install elastic-apm-node
-RUN npm install node-static
 
 COPY . .
 COPY ./ati_arquivos/* ./ati_arquivos/
