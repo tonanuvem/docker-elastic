@@ -15,7 +15,7 @@ var app = require("express")();
 var fs = require('fs');
 var path = require('path');
 
-app.use('/ati_arquivos', express.static('arquivos'));
+//app.use('/ati_arquivos', express.static('arquivos'));
 //app.use("/ati_arquivos", express.static(path.resolve(__dirname, 'ati_arquivos')));
 
 app.get("/", function(req, res) {
@@ -28,6 +28,7 @@ app.get("/", function(req, res) {
 
 app.get("/healthcheck", function(req, res) {
     res.send("OK");
+    res.sendo(path.resolve(__dirname, 'ati_arquivos'));
 });
 
 app.get("/ati", function(req, res) {
