@@ -36,7 +36,7 @@ services:
       - elasticsearch
 
   app-client-apm-nodejs:
-    image: tonanuvem/app-client-apm-nodejs:latest
+    image: tonanuvem/app-client-apm-nodejs:2.0
 #    build:
 #      context: app-client-nodejs-apm/
     container_name: app-client-apm-nodejs
@@ -80,21 +80,21 @@ services:
     depends_on:
       - elasticsearch
 
-  logspout:
-    image: gliderlabs/logspout:latest
-    container_name: logspout
-    volumes:
-      - /etc/hostname:/etc/host_hostname:ro
-      - /var/run/docker.sock:/var/run/docker.sock
-    command:
-      syslog://logstash:5000
+#  logspout:
+#    image: gliderlabs/logspout:latest
+#    container_name: logspout
+#    volumes:
+#      - /etc/hostname:/etc/host_hostname:ro
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    command:
+#      syslog://logstash:5000
 #    environment:
 #      - "ROUTE_URIS=logstash://logstash:5000"
 #      - "LOGSTASH_TAGS: docker-elastic"
-    networks:
-      - elk
-    depends_on:
-      - logstash
+#    networks:
+#      - elk
+#    depends_on:
+#      - logstash
 
 volumes:
   esdata:
