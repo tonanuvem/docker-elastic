@@ -11,7 +11,8 @@ var apm = require('elastic-apm-node').start({
   ignoreUrls: ['/healthcheck']
 })
 
-var app = require("express")();
+var express = require('express');
+var app = express();
 var fs = require('fs');
 var path = require('path');
 
